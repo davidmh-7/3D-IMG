@@ -1,0 +1,22 @@
+#poster{
+    height: 200px;
+    width: 300px;
+    transition: box-shadow .1s, transform .1s;
+
+    background:url(../img/Example.jpg) no-repeat center;
+    background-size: cover;
+
+}
+#poster :hover{
+box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
+}
+
+.centrar{
+display: flex;
+justify-content: center;
+margin-top: 300px;
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+

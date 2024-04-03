@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D-Img</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="css/3D-Img.css">
+</head>
+
+<body>
+<div class="centrar">
+<div id="poster" style="display: flex; justify-content: right;">
+
+</div>
+</div>
+
+    <script>
+const el = document.getElementById('poster')
+const height = el.clientHeight
+const width = el.clientWidth
+
+el.addEventListener('mousemove',(evt)=>{
+    const{layerX, layerY} = evt
+
+    const yRotation = (
+        (layerX - width / 2) / width
+    ) * 20 
+
+    const xRoation = (
+    (layerY - height / 2) / height
+    ) * 20
+
+    const string = `
+    perspective(500px)
+    scale(1.1)
+    rotateX(${xRoation}deg)
+    rotateY(${yRotation}deg)`
+    el.style.transform = string
+})
+
+el.addEventListener('mouseout', ()=>{
+    el.style.transform=`
+    perspective(500px)
+    scale(1)
+    rotateX(0)
+    rotateY(0)`
+})
+    </script>
+</body>
+</html>
